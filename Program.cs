@@ -7,7 +7,8 @@ namespace HomeworkLesson16
     {
         static void Main(string[] args)
         {
-            FirstAssignment();
+            // FirstAssignment();
+            SecondAssignment();
         }
 
         static void FirstAssignment()
@@ -24,7 +25,21 @@ namespace HomeworkLesson16
 
         static void SecondAssignment()
         {
-            
+            Console.Write("Enter length of the array: ");
+            var length = int.Parse(Console.ReadLine());
+            var arr = new int[length];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine("Enter number: ");
+                arr[i] = int.Parse(Console.ReadLine());
+            }
+            var numberOfPositiveNums = arr.Count(p => p > 0);
+            var sumOfNegativeNums = arr.Where(n => n < 0).Sum(n => n);
+            var newArr = new int[] {numberOfPositiveNums, sumOfNegativeNums};
+            foreach (var i in newArr)
+            {
+                Console.Write($"{i}, ");
+            }
         }
     }
 }
