@@ -8,7 +8,8 @@ namespace HomeworkLesson16
         static void Main(string[] args)
         {
             // FirstAssignment();
-            SecondAssignment();
+            // SecondAssignment();
+            ThirdAssignment();
         }
 
         static void FirstAssignment()
@@ -39,6 +40,23 @@ namespace HomeworkLesson16
             foreach (var i in newArr)
             {
                 Console.Write($"{i}, ");
+            }
+        }
+
+        static void ThirdAssignment()
+        {
+            Console.Write("Enter length of the array: ");
+            var length = int.Parse(Console.ReadLine());
+            var arr = new string[length];
+            Console.WriteLine("Enter words: ");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = Console.ReadLine();
+            }
+            arr = arr.OrderBy(p => p.Length).ToArray();
+            foreach (var VARIABLE in arr)
+            {
+                Console.Write($"{VARIABLE}\t");
             }
         }
     }
