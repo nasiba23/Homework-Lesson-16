@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 
 namespace HomeworkLesson16
@@ -7,9 +8,11 @@ namespace HomeworkLesson16
     {
         static void Main(string[] args)
         {
-            // FirstAssignment();
-            // SecondAssignment();
+            FirstAssignment();
+            SecondAssignment();
             ThirdAssignment();
+            FourthAssignment();
+            
         }
 
         static void FirstAssignment()
@@ -57,6 +60,16 @@ namespace HomeworkLesson16
             foreach (var VARIABLE in arr)
             {
                 Console.Write($"{VARIABLE}\t");
+            }
+        }
+
+        static void FourthAssignment()
+        {
+            var arr = new[] {4, 4, 5, 4, 4, 4};
+            var unique = arr.GroupBy(p => p).Where(p => p.Count() == 1).FirstOrDefault();
+            foreach (var VARIABLE in unique)
+            {
+                Console.WriteLine(VARIABLE);
             }
         }
     }
